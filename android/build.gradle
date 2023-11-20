@@ -1,0 +1,47 @@
+buildscript {
+    ext.kotlin_version = '1.9.20'
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.1'
+        classpath 'com.google.gms:google-services:4.4.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.9' // Sesuaikan dengan versi yang sesuai jika Anda menggunakan Crashlytics
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(':app')
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    namespace 'com.example.project_sync'
+    compileSdk 33
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        main.manifest.srcFile 'app/src/main/AndroidManifest.xml'
+    }
+    buildFeatures {
+        buildConfig true
+    }
+
+    defaultConfig {
+        manifestPlaceholders = [applicationName: "com.example.project_sync"]
+    }
+}

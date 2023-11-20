@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1090501322083",
+    "project_id": "projectsync-f9b50",
+    "storage_bucket": "projectsync-f9b50.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090501322083:android:221b2cce16f9ff59175f56",
+        "android_client_info": {
+          "package_name": "com.example.project_sync"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBchec5LkDIvyveG0M-QjWIt7ny_PZEg5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
